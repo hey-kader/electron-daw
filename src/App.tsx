@@ -1,42 +1,35 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, {useState} from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import icon from '../assets/icon.svg';
 import './App.global.css';
 
-import { Register } from "./components/Register";
-import { Login } from "./components/Login";
+import  Login from "./components/Login";
 
-const Hello = () => {
-  return (
-    <div>
+const Home = () => {
 
-      <div className="wrapper-login">
-	<br />
-	<h1>
-	    Login
-	</h1>
-      </div>
-      <hr />
-      <div className="wrapper-register">
-	<h1>
-	   Register 
-	</h1>
-	<br />
-      </div>
-    </div>
-  );
-};
+    const [state, setState] = useState(0);
+
+    return (
+	<div className="home">
+	    <Link to="/login">    
+		<Login />
+	    </Link>
+	</div>
+    );
+}
 
 export default function App() {
+
   return (
+
 <>
     <Router>
       <Switch>
-        <Route path="/" component={Hello} />
-        <Route path="/register" component={Register} />
-        <Route path="/login" component={Login} />
+         <Route path="/" component={Home} />
+         <Route path="/login" component={Login} />
       </Switch>
     </Router>
 </>
-  );
+
+  )
 }
