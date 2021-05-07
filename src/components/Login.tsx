@@ -28,8 +28,12 @@ export default function Login () {
             connection.query(sql, function (err, result) {
                 
                 if (err) throw err
-                if (result.length == 0) alert('nope')
-                else alert('hey kader!')
+                if (result.length == 0) {
+                    alert ("invalid login")
+                }    
+                else {
+                    alert ('hey '+email+'!')
+                }
                  
         
             })
@@ -46,7 +50,7 @@ export default function Login () {
                     <table>
                     <tr>
                         <td>
-                        <label for="email">Email: </label>
+                        <label for="email">Username: </label>
                         </td>
                         <td>
                         <input type="email" id="email" name="email" required />
