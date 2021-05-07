@@ -51,7 +51,6 @@ export default function Register () {
 
     return (
         <div id="wrapper-register">
-            <h1>Register</h1>
       	    <div id="register-form-wrapper">
                 <form action="#">
                     <table>

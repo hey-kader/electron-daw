@@ -17,12 +17,11 @@ export default function Login () {
         connection.connect (function (err) {
             
             if (err) throw err
-            console.log('it worked!') 
 
-            var email = document.getElementById("email").value
+            var username = document.getElementById("username").value
             var password = document.getElementById("password").value
             
-            const sql = "select * from users where " + "username="+ "\'"+email+"\'" + " and password="+"\'"+password+"\'"+";" 
+            const sql = "select * from users where " + "username="+ "\'"+username+"\'" + " and password="+"\'"+password+"\'"+";" 
                 
             
             connection.query(sql, function (err, result) {
@@ -32,7 +31,7 @@ export default function Login () {
                     alert ("invalid login")
                 }    
                 else {
-                    alert ('hey '+email+'!')
+                    alert ('hey '+username+'!')
                 }
                  
         
@@ -44,16 +43,15 @@ export default function Login () {
 
     return (
         <div id="wrapper-login">
-            <h1>Login</h1>
       	    <div id="login-form-wrapper">
                 <form action="#">
                     <table>
                     <tr>
                         <td>
-                        <label for="email">Username: </label>
+                        <label for="username">Username: </label>
                         </td>
                         <td>
-                        <input type="email" id="email" name="email" required />
+                        <input type="text" id="username" name="email" required />
                         </td>
                     </tr>
                     <tr>
@@ -61,7 +59,7 @@ export default function Login () {
                         <label for="password">Password: </label>
                         </td>
                         <td>
-                        <input type="password" id="password" name="email" required />
+                        <input type="password" id="password" name="username" required />
                         </td>
                     </tr>
                     <tr>
